@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06B18A19-F497-4BA8-818E-E90E679623E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UcakBiletSatis</RootNamespace>
+    <AssemblyName>UcakBiletSatis</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Sqlite, Version=5.0.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Sqlite.Core.5.0.1\lib\netstandard2.0\Microsoft.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.0.4.976, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.0.4\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminSeferGuncelleIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSeferGuncelleIslem.Designer.cs">
+      <DependentUpon>AdminSeferGuncelleIslem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminSeferListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSeferListele.Designer.cs">
+      <DependentUpon>AdminSeferListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminSeferSilOnay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminSeferSilOnay.Designer.cs">
+      <DependentUpon>AdminSeferSilOnay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferEkle.Designer.cs">
+      <DependentUpon>AdminUcakSeferEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferGuncelle.Designer.cs">
+      <DependentUpon>AdminUcakSeferGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminUcakSeferSil.Designer.cs">
+      <DependentUpon>AdminUcakSeferSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataTestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataTestForm.Designer.cs">
+      <DependentUpon>DataTestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models %28Class%29\Bilet.cs" />
+    <Compile Include="Kullanici\BiletKoltukSecimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\BiletKoltukSecimi.Designer.cs">
+      <DependentUpon>BiletKoltukSecimi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\BiletOnayFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\BiletOnayFatura.Designer.cs">
+      <DependentUpon>BiletOnayFatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DbUcakBiletSatisDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbUcakBiletSatisDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DbUcakBiletSatisDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbUcakBiletSatisDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DbUcakBiletSatisDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbUcakBiletSatisDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DbUcakBiletSatisDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbUcakBiletSatisDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models %28Class%29\IBilet.cs" />
+    <Compile Include="Models %28Class%29\Kullanici.cs" />
+    <Compile Include="Kullanici\KullaniciAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciAnaSayfa.Designer.cs">
+      <DependentUpon>KullaniciAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciBilgiGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciBilgiGuncelleme.Designer.cs">
+      <DependentUpon>KullaniciBilgiGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciBilgilerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciBilgilerim.Designer.cs">
+      <DependentUpon>KullaniciBilgilerim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciKayit.Designer.cs">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciSifreGuncelleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\KullaniciSifreGuncelleme.Designer.cs">
+      <DependentUpon>KullaniciSifreGuncelleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models %28Class%29\SqlBaglanti.cs" />
+    <Compile Include="Kullanici\UcakBiletiAl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\UcakBiletiAl.Designer.cs">
+      <DependentUpon>UcakBiletiAl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici\UcakBiletlerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanici\UcakBiletlerim.Designer.cs">
+      <DependentUpon>UcakBiletlerim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models %28Class%29\UcakSefer.cs" />
+    <Compile Include="Models %28Class%29\UcakSeferKoltuk.cs" />
+    <Compile Include="Models %28Class%29\YardimciSinif.cs" />
+    <EmbeddedResource Include="Admin\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminSeferGuncelleIslem.resx">
+      <DependentUpon>AdminSeferGuncelleIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminSeferListele.resx">
+      <DependentUpon>AdminSeferListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminSeferSilOnay.resx">
+      <DependentUpon>AdminSeferSilOnay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminUcakSeferEkle.resx">
+      <DependentUpon>AdminUcakSeferEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminUcakSeferGuncelle.resx">
+      <DependentUpon>AdminUcakSeferGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\AdminUcakSeferSil.resx">
+      <DependentUpon>AdminUcakSeferSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataTestForm.resx">
+      <DependentUpon>DataTestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\BiletKoltukSecimi.resx">
+      <DependentUpon>BiletKoltukSecimi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\BiletOnayFatura.resx">
+      <DependentUpon>BiletOnayFatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciAnaSayfa.resx">
+      <DependentUpon>KullaniciAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciBilgiGuncelleme.resx">
+      <DependentUpon>KullaniciBilgiGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciBilgilerim.resx">
+      <DependentUpon>KullaniciBilgilerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciKayit.resx">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\KullaniciSifreGuncelleme.resx">
+      <DependentUpon>KullaniciSifreGuncelleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Kullanici\UcakBiletiAl.resx">
+      <DependentUpon>UcakBiletiAl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanici\UcakBiletlerim.resx">
+      <DependentUpon>UcakBiletlerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <Content Include="bin\Debug\bin\UcakBiletSatisDb.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\UcakBiletSatisDb.sqbpro">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="bin\UcakBiletSatisDb.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="DbUcakBiletSatisDataSet.xsc">
+      <DependentUpon>DbUcakBiletSatisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DbUcakBiletSatisDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet.xss">
+      <DependentUpon>DbUcakBiletSatisDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet1.xsc">
+      <DependentUpon>DbUcakBiletSatisDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DbUcakBiletSatisDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet1.xss">
+      <DependentUpon>DbUcakBiletSatisDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet2.xsc">
+      <DependentUpon>DbUcakBiletSatisDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DbUcakBiletSatisDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet2.xss">
+      <DependentUpon>DbUcakBiletSatisDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet3.xsc">
+      <DependentUpon>DbUcakBiletSatisDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DbUcakBiletSatisDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbUcakBiletSatisDataSet3.xss">
+      <DependentUpon>DbUcakBiletSatisDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>
