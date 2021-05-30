@@ -7,7 +7,7 @@ using UcakBiletSatis.Models__Class_;
 
 namespace UcakBiletSatis
 {
-    public class Bilet 
+    public class Bilet : IBilet
     {
         public string hareketYeri { get; set; }
         public string varisYeri { get; set; }
@@ -28,9 +28,17 @@ namespace UcakBiletSatis
             this.kalkisSaat = kalkisSaat;
             this.varisSaat = varisSaat;
             this.koltukNumarasi = koltukNumarasi;
-
         }
 
-      
+        IBilet IBilet.getClone()
+        {
+            return new Bilet(hareketYeri, varisYeri, kalkisTarih, kalkisSaat, varisSaat, koltukNumarasi);
+        }
+
+        internal Bilet getClone()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

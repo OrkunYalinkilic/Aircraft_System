@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.SQLite;
+using UcakBiletSatis.Models__Class_;
 
 namespace UcakBiletSatis
 {
@@ -42,7 +43,12 @@ namespace UcakBiletSatis
             labelBiletKoltukNo.Text = aktifUcakSeferKoltuk.koltukNumara.ToString();
             labelBiletFiyati.Text = aktifUcakSefer.UcakSeferUcret.ToString() + " TL";
         }
-
+            
+        RemoteControl remoteControl = new RemoteControl();
+        // Komut Tasarım desenini kullandığım alandır.  Debug kısmında yazılacakları her onay durumunda 
+        // kontrol etmek için global olarak oluşturdum. Butonların click eventlerinin son kısımlarında
+        // ise remoteControl fonksiyonlarını kullandım.
+        
         private void buttonBiletOnay_Click(object sender, EventArgs e)
         {
             con.Open();
@@ -65,12 +71,20 @@ namespace UcakBiletSatis
             Application.OpenForms["BiletKoltukSecimi"].Close();
             Application.OpenForms["BiletOnayFatura"].Close();
 
-            MessageBox.Show("Biletiniz Onaylandı.\nBiletlerim menüsünden biletinize ulaşabilirsiniz", "BAŞARILI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            UcakSeferOnayli onaySefer = (UcakSeferOnayli)new UcakSefer();
+            onaySefer.OnayMesajBildir();  // Dekoratör Desen kullandığım alandır. Açıklama kısmında açıkladım.
 
+            remoteControl.remoteExecute();
+            remoteControl.setDebugMessageOnay(new UcakSeferOnayli(aktifUcakSefer));
         }
 
         private void buttonBiletRed_Click(object sender, EventArgs e)
         {
+            UcakSeferRed redSefer = (UcakSeferRed)new UcakSefer();
+            redSefer.RedMesajBildir(); // Dekoratör Desen kullandığım alandır. Açıklama kısmında açıkladım.
+
+            remoteControl.remoteExecute();
+            remoteControl.setDebugMessageRed(new UcakSeferRed(aktifUcakSefer));
 
         }
     }

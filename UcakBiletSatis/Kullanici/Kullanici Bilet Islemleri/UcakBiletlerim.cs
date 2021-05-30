@@ -20,7 +20,8 @@ namespace UcakBiletSatis
         SQLiteConnection con = new SQLiteConnection(@"Data Source=UcakBiletSatisDb.db");
         List<Bilet> kullaniciBiletleri = new List<Bilet>();
 
-       // IBilet gelenBilet = new Bilet();
+        public Bilet gelenBilet = new Bilet();
+
         public UcakBiletlerim(Kullanici _aktifKullanici)
         {
             aktifKullanici = _aktifKullanici;
@@ -35,18 +36,19 @@ namespace UcakBiletSatis
             SQLiteDataReader oku = komut.ExecuteReader();
             while (oku.Read())
             {
-               /* Bilet yeniGelenBilet = gelenBilet.getClone(
-                     oku[0].ToString(), oku[1].ToString(), oku[2].ToString(),
-                     oku[3].ToString(), oku[4].ToString(), oku[5].ToString()
+              // Klonlama işlemini fiili olarak burada kullandım.
+                 //Prototip Desen kullandığım alandır. Açıklama kısmında açıkladım.
 
-                    );*/
+                 Bilet yeniGelenBilet = gelenBilet.getClone();
 
-               // kullaniciBiletleri.Add(yeniGelenBilet);
+                yeniGelenBilet.hareketYeri = oku[0].ToString();
+                yeniGelenBilet.varisYeri = oku[1].ToString();
+                yeniGelenBilet.kalkisTarih = oku[2].ToString();
+                yeniGelenBilet.kalkisSaat = oku[3].ToString();
+                yeniGelenBilet.varisSaat = oku[4].ToString();
+                yeniGelenBilet.koltukNumarasi = oku[5].ToString();
 
-                kullaniciBiletleri.Add(new Bilet(
-                    oku[0].ToString(), oku[1].ToString(), oku[2].ToString(),
-                     oku[3].ToString(), oku[4].ToString(), oku[5].ToString()
-                    ));
+                kullaniciBiletleri.Add(yeniGelenBilet);
             }
             con.Close();
 
@@ -76,6 +78,11 @@ namespace UcakBiletSatis
             }
 
           
+        }
+
+        private void flowLayoutPanelBiletlerim_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -31,10 +31,6 @@ namespace UcakBiletSatis
             labelCepTelNo.Text = aktifKullanici.cepTelefonNumara;
             labelTckimlikNo.Text = aktifKullanici.tcKimlikNo;
 
-            // select UcakNeredenYer from UcakSefer
-
-            //List<string> ucakNeredenList = new List<string>();
-
             con.Open();
             SQLiteCommand komut = new SQLiteCommand("select UcakNeredenYer from UcakSefer", con);
             SQLiteDataReader oku = komut.ExecuteReader();
@@ -43,19 +39,6 @@ namespace UcakBiletSatis
                 comboBoxNereden.Items.Add(oku[0].ToString());
             }
             con.Close();
-
-            //for(int i=0; i<ucakNeredenList.Count;i++) comboBoxNereden.Items.Add(ucakNeredenList[i]);
-
-            /*private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-            {
-            //ComboBox'da seçilen değeri yakalama.
-            MessageBox.Show(comboBox1.SelectedItem.ToString());
-            MessageBox.Show(comboBox1.SelectedText.ToString());
-            
-            //ComboBox'da seçilen değerin indeksini yakalama.
-            MessageBox.Show(comboBox1.SelectedIndex.ToString());
-            }
-            */
 
         }
 

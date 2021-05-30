@@ -101,7 +101,6 @@ namespace UcakBiletSatis
             con.Close();
 */
             #endregion
-
           
             #region 
            /* string komut2 = "INSERT INTO Kullanici(Adi, Soyadi, TcKimlikNumarasi,CepNumarasi,KullaniciAdi,Sifre) VALUES('Orkun', 'GÜRSOY', '23421', '3421', 'test', 'acaba'); ";
@@ -140,7 +139,7 @@ namespace UcakBiletSatis
             Login frm = new Login();
             frm.ShowDialog();
 
-            Application.OpenForms[1].Close();
+           // Application.OpenForms[1].Close();
 
 
 

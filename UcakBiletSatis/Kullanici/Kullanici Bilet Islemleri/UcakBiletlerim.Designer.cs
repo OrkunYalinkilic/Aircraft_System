@@ -37,6 +37,7 @@
             this.flowLayoutPanelBiletlerim.Name = "flowLayoutPanelBiletlerim";
             this.flowLayoutPanelBiletlerim.Size = new System.Drawing.Size(851, 426);
             this.flowLayoutPanelBiletlerim.TabIndex = 0;
+            this.flowLayoutPanelBiletlerim.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanelBiletlerim_Paint);
             // 
             // UcakBiletlerim
             // 

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UcakBiletSatis.Models__Class_;
 
 namespace UcakBiletSatis
 {
-    public class UcakSefer
+    public class UcakSefer : IUcakSefer
     {
         public int UcakSeferID { get; set; }
         public string UcakNeredenYer { get; set; }
@@ -15,7 +16,6 @@ namespace UcakBiletSatis
         public string UcakVarisSaat { get; set; }
         public string UcakKalkisTarih { get; set; }
         public int UcakSeferUcret { get; set; }
-
 
         public bool boslukKontrol()
         {
@@ -31,6 +31,7 @@ namespace UcakBiletSatis
 
             return true;
         }
+
 
 
 

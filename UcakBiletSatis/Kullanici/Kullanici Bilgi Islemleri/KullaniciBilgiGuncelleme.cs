@@ -40,7 +40,8 @@ namespace UcakBiletSatis
             user.cepTelefonNumara = MskKullaniciTelefonGuncel.Text;
             user.kullaniciAdi = txtKullaniciAdiGuncel.Text;
 
-            if (!String.IsNullOrEmpty(user.adi) && !String.IsNullOrEmpty(user.soyadi) && !String.IsNullOrEmpty(MskKullaniciTcGuncel.Text) && !String.IsNullOrEmpty(MskKullaniciTelefonGuncel.Text) && !String.IsNullOrEmpty(txtKullaniciAdiGuncel.Text))
+            if (!String.IsNullOrEmpty(user.adi) && !String.IsNullOrEmpty(user.soyadi) && !String.IsNullOrEmpty(MskKullaniciTcGuncel.Text) 
+                && !String.IsNullOrEmpty(MskKullaniciTelefonGuncel.Text) && !String.IsNullOrEmpty(txtKullaniciAdiGuncel.Text))
             {
                 if (YardimciSinif.stringKontrol(user.adi, user.soyadi) == false)
                 {
@@ -59,22 +60,13 @@ namespace UcakBiletSatis
                     komut.Parameters.AddWithValue("@p6", aktifKullanici.kullaniciID);
                     //con.Clone();
 
-                    try
-                    {
-                        komut.ExecuteNonQuery();
-                    }
-                    catch (Exception mesa)
-                    {
-                        MessageBox.Show(mesa.Message.ToString());
-                    }
 
-                    //komut.ExecuteNonQueryAsync();
+                    komut.ExecuteNonQuery();
 
                     con.Close();
                     MessageBox.Show("Güncelleme işlemi gerçekleştirildi.", "Güncelleme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
 
-                    // Application.OpenForms["frmOgrDuzenleFormu"].Close();
                 }
             }
             else
